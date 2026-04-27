@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ShoppingCart } from 'lucide-react';
 import { whatsappLink } from "@/lib/whatsapp";
 
 export function Hero() {
@@ -57,7 +58,7 @@ export function Hero() {
                 fontSize: 13,
               }}
             >
-              🛒 View Sweets
+              <ShoppingCart className="h-4 w-4"/> View Sweets
             </a>
           </div>
         </div>

@@ -2,22 +2,23 @@
 
 import Image from "next/image";
 import { whatsappLink } from "@/lib/whatsapp";
+import { FaGift } from "react-icons/fa6";
 
 const hampers = [
   {
     name: "Wedding Gift Box",
     desc: "An heirloom assortment for the most cherished celebrations — kaju katli, motichoor, ghewar, and silver-leaf burfis.",
-    img: "/hamper-wedding.jpg",
+    img: "/image/hamper-wedding.jpg",
   },
   {
     name: "Festive Combo",
     desc: "Diwali, Holi, Rakhi — a curated mix of seasonal favourites.",
-    img: "/hamper-festive.jpg",
+    img: "/image/hamper-festive.jpg",
   },
   {
     name: "Corporate Hampers",
     desc: "Elegant, brand-friendly hampers for clients and teams.",
-    img: "/hamper-corporate.jpg",
+    img: "/image/hamper-corporate.jpg",
   },
 ];
 
@@ -33,7 +34,7 @@ export function Hampers() {
           </div>
 
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            Perfect Gift Hampers <span className="gold-text">🎁</span>
+            Perfect Gift Hampers
           </h2>
 
           <div className="gold-divider w-24 mx-auto mt-6" />
@@ -56,6 +57,7 @@ export function Hampers() {
                   src={h.img}
                   alt={h.name}
                   fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

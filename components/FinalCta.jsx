@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { PHONE_DISPLAY, WHATSAPP_NUMBER, whatsappLink } from "@/lib/whatsapp";
+import { Phone } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa6";
 
 export function FinalCta() {
   return (
@@ -35,7 +37,7 @@ export function FinalCta() {
 
         <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
           Craving Something Sweet?{" "}
-          <span className="text-gold">😋</span>
+          
           <br />
           Order Now.
         </h2>
@@ -52,17 +54,17 @@ export function FinalCta() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-lift inline-flex h-14 items-center justify-center rounded bg-[#B91C2C] px-10 text-[#F5C842] shadow-2xl hover:bg-[#D42030] w-full sm:w-auto"
+            className="btn-lift inline-flex h-14 items-center justify-center rounded bg-[#B91C2C] px-10 text-[#F5C842] shadow-2xl hover:bg-[#D42030] w-full sm:w-auto gap-1"
           >
-            WhatsApp
+           <FaWhatsapp /> WhatsApp
           </a>
 
           {/* Call */}
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="btn-lift inline-flex h-14 items-center justify-center rounded px-10 text-ivory border border-[#F5C842] hover:bg-[#F5C842]/20 w-full sm:w-auto"
+            className="btn-lift inline-flex h-14 items-center justify-center rounded px-10 text-ivory border border-[#F5C842] hover:bg-[#F5C842]/20 w-full sm:w-auto gap-1"
           >
-            📞 Call Now
+            <Phone className="h-4 w-4"/> Call Now
           </a>
 
         </div>

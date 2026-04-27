@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { whatsappLink } from "@/lib/whatsapp";
+import { products } from "@/lib/sweet-data";
 
 // 👉 Use public folder images instead of import
 const sweets = [
@@ -16,16 +17,9 @@ const sweets = [
   { name: "Mawa Burfi", desc: "Rich khoya squares with ghee crumb.", img: "/sweet-kaju-katli.jpg", category: "Burfis" },
 ];
 
-const categories = ["All", "Burfis", "Laddoos", "Ghee Sweets", "Bengali"];
 
 export function BestSellers() {
-  const [active, setActive] = useState("All");
-
-  const filtered = useMemo(() => {
-    return active === "All"
-      ? sweets
-      : sweets.filter((s) => s.category === active);
-  }, [active]);
+  const filtered = products.filter(p => p.badge);
 
   return (
     <section id="sweets" className="bg-ivory py-20 md:py-28">
@@ -51,39 +45,20 @@ export function BestSellers() {
           </span>
         </div>
 
-        {/* Filters */}
-        <div className="reveal mb-10 flex flex-wrap items-center justify-center gap-2 md:gap-3">
-          {categories.map((c) => {
-            const isActive = c === active;
-
-            return (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`btn-lift inline-flex h-10 items-center rounded px-5 text-xs md:text-sm font-semibold uppercase tracking-widest border transition-colors ${isActive
-                    ? "bg-crimson text-ivory border-crimson shadow-md"
-                    : "bg-white text-foreground/70 border-(--gold)/40 hover:text-crimson"
-                  }`}
-              >
-                {c}
-              </button>
-            );
-          })}
-        </div>
-
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {filtered.map((s, i) => (
             <article
               key={s.name}
-              className="reveal card-hover group flex flex-col overflow-hidden rounded bg-white border border-(--gold)/20 shadow-sm"
+              className="reveal card-hover group flex flex-col overflow-hidden rounded bg-white border border-gold/20 shadow-sm hover:shadow-lg"
             >
               {/* Image */}
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={s.img}
+                  src={s.image}
                   alt={s.name}
                   fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

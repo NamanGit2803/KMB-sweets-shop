@@ -24,7 +24,6 @@ export function Legacy() {
 
           <h2 className="font-display text-4xl md:text-5xl font-bold text-ivory">
             Our Legacy of Taste{" "}
-            <span className="text-gold">❤️</span>
           </h2>
 
           <div className="gold-divider w-24 mx-auto mt-6" />
@@ -42,10 +41,11 @@ export function Legacy() {
               <div className="relative border-4 border-(--gold)/70 bg-ivory p-2 shadow-2xl -rotate-2">
                 <div className="relative w-full aspect-4/5">
                   <Image
-                    src="/legacy-storefront.jpg"
+                    src="/image/shop.jpeg"
                     alt="Original Kyal sweet shop"
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-all duration-300"
+                    sizes="(max-width: 768px) 50vw, 33vw"
                     style={{ filter: "sepia(0.3) contrast(1.05)" }}
                   />
                 </div>
@@ -63,16 +63,17 @@ export function Legacy() {
               <div className="relative border-4 border-(--gold)/70 bg-ivory p-2 shadow-2xl rotate-2">
                 <div className="relative w-full aspect-4/5">
                   <Image
-                    src="/legacy-utensils.jpg"
+                    src="/image/hemper1.jpeg"
                     alt="Traditional utensils"
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover hover:scale-105 transition-all duration-300"
                     style={{ filter: "sepia(0.25)" }}
                   />
                 </div>
 
                 <div className="text-center text-xs text-foreground/70 italic py-2 font-display">
-                  Heirloom kadhais
+                  Gift Box
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { whatsappLink } from "./whatsapp";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export function FloatingWhatsapp() {
   return (
