@@ -105,7 +105,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 jali-pattern opacity-15 pointer-events-none" />
                 <div className="reveal relative mx-auto max-w-4xl px-4 md:px-8 text-center">
                     <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4" style={{ fontFamily: "var(--font-poppins)" }}>✦ THE FOUNDER ✦</div>
-                    <h2 className="font-display text-4xl md:text-[56px] font-bold text-gold leading-tight">Shri Kyal Ji</h2>
+                    <h2 className="font-display text-4xl md:text-[56px] font-bold text-gold leading-tight">Govind Prasad Ji Kyal</h2>
                     <p className="mt-2 text-sm text-(--gold)/80" style={{ fontFamily: "var(--font-poppins)" }}>Founder, Kyal Misthan Bhandar · Est. 1962</p>
 
                     {/* Founder image placeholder */}
