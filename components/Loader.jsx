@@ -8,7 +8,7 @@ export default function Loader({ children }) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000); // duration of your animation
+        }, 2500); // duration of your animation
 
         return () => clearTimeout(timer);
     }, []);
