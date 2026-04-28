@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsapp } from "@/components/FloatingWhatsapp";
+import Loader from "@/components/Loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +27,14 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header/>
-        <main className="flex-1">
-        {children}
-        </main>
-        <Footer/>
-        <FloatingWhatsapp/>
+        <Loader>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <FloatingWhatsapp />
+        </Loader>
       </body>
     </html>
   );

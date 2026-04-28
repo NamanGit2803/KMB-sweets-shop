@@ -64,11 +64,19 @@ export function Footer() {
             </div>
 
             <a
-              href={`tel:+${WHATSAPP_NUMBER}`}
+              href={`tel:+${PHONE_DISPLAY}`}
               className="inline-flex items-center gap-2 text-sm hover:text-gold"
             >
               <Phone className="h-4 w-4" />
               {PHONE_DISPLAY}
+            </a>
+
+            <a
+              href={`tel:+917742841548`}
+              className="flex items-center gap-2 text-sm hover:text-gold"
+            >
+              <Phone className="h-4 w-4" />
+              +91 77428 41548
             </a>
 
             <div className="mt-4 flex gap-3">

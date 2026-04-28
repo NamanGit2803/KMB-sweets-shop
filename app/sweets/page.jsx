@@ -110,7 +110,7 @@ export default function SweetsPage() {
                                                     alt={p.name}
                                                     fill
                                                     sizes="(max-width: 768px) 50vw, 33vw"
-                                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                                 />
                                             </div>
 
@@ -145,12 +145,12 @@ export default function SweetsPage() {
                                                     </div>
 
                                                     <a
-                                                        href={whatsappLink(p.name)}
+                                                        href={p.outOfStock ? undefined : whatsappLink(p.name)}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="btn-lift flex h-11 items-center justify-center gap-2 rounded bg-[#B91C2C] text-[#F5C842] hover:bg-[#D42030]"
+                                                        className={`btn-lift flex  h-11 items-center justify-center gap-2 rounded bg-[#B91C2C] text-[#F5C842] ${p.outOfStock ? 'opacity-80' : 'hover:bg-[#D42030]'}`}        
                                                     >
-                                                        Order on WhatsApp
+                                                        {p.outOfStock ? 'Out of Stock' : 'Order on WhatsApp'}
                                                     </a>
                                                 </div>
                                             </div>
@@ -165,7 +165,7 @@ export default function SweetsPage() {
             </main>
 
             {/* CTA */}
-            <BottomCTA title={"Didn't find what you're looking for?"} description={'We take custom orders for weddings & events.'}/>
+            <BottomCTA title={"Didn't find what you're looking for?"} description={'We take custom orders for weddings & events.'} />
 
         </div>
     );
