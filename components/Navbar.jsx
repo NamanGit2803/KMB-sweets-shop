@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { whatsappLink } from "@/lib/whatsapp";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const links = [
   { label: "Home", href: "/" },
@@ -39,18 +40,18 @@ export function Header() {
       >
         {/* LOGO */}
         <Link href="/" className="flex flex-col leading-none shrink-0">
-          <span
-            className={`font-display font-bold gold-text transition-all duration-300 ${scrolled ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+          <Image
+            src="/image/logo2.png"
+            alt="Kyal Misthan Bhandar"
+            width={250}
+            height={80}
+            className={`transition-all duration-300
+    ${scrolled
+                ? "h-[75px] w-24 md:h-[80px] md:w-32"
+                : "h-[100px] w-28 md:h-[110px] md:w-40"
               }`}
-          >
-            Kyal Misthan Bhandar
-          </span>
-
-          {!scrolled && (
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-crimson mt-1">
-              EST. 1962 · FATEHPUR
-            </span>
-          )}
+            priority
+          />
         </Link>
 
         {/* DESKTOP NAV */}

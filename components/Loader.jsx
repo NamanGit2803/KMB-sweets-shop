@@ -16,7 +16,14 @@ export default function Loader({ children }) {
     if (loading) {
         return (
             <div className="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-500">
-                <video autoPlay muted className="w-64 md:w-80" onEnded={() => setLoading(false)}>
+                <video autoPlay
+                    muted
+                    playsInline
+                    preload="auto"
+                    disablePictureInPicture
+                    controls={false}
+                    className="w-64 md:w-80"
+                    onEnded={() => setLoading(false)}>
                     <source src="/logo-intro.mp4" type="video/mp4" />
                 </video>
             </div>

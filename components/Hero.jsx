@@ -14,7 +14,6 @@ export function Hero() {
         {/* LEFT CONTENT */}
         <div className="order-2 lg:order-1 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 rounded border border-(--gold)/40 bg-white/60 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-crimson">
-            <span>🏆</span>
             <span>Most Trusted Premium Mithai</span>
           </div>
 

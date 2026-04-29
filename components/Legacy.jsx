@@ -38,7 +38,7 @@ export function Legacy() {
             <div className="relative">
               <div className="absolute -inset-2 bg-(--gold)/30 rounded-sm blur-xl" />
 
-              <div className="relative border-4 border-(--gold)/70 bg-ivory p-2 shadow-2xl -rotate-2">
+              <div className="relative border-4 border-gold/70 bg-ivory p-2 shadow-2xl -rotate-2">
                 <div className="relative w-full aspect-4/5">
                   <Image
                     src="/image/shop.jpeg"

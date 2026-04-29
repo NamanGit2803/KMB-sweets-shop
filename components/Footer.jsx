@@ -82,7 +82,8 @@ export function Footer() {
             <div className="mt-4 flex gap-3">
 
               <a
-                href="#"
+                href="https://www.instagram.com/kyal_misthan_bhandar.official?igsh=eDA1ejhwdmdlb2ty"
+                target="_blank"
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded border border-(--gold)/40 hover:bg-(--gold)/15"
               >
@@ -90,7 +91,8 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/share/1FKvR72gd7/"
+                target="_blank"
                 aria-label="Facebook"
                 className="flex h-10 w-10 items-center justify-center rounded border border-(--gold)/40 hover:bg-(--gold)/15"
               >

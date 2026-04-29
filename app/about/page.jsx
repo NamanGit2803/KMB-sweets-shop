@@ -51,7 +51,30 @@ export default function AboutPage() {
                             <div className="relative p-8 md:p-12" style={{ background: "linear-gradient(180deg, oklch(0.38 0.18 27), oklch(0.30 0.15 25))" }}>
                                 <div className="absolute inset-0 jali-pattern opacity-10 pointer-events-none" />
                                 <div className="relative">
-                                    <div className="font-display text-[100px] leading-none font-bold text-gold opacity-25 select-none">1962</div>
+                                    <div className="font-display text-[100px] leading-none font-bold text-gold opacity-95 sm:opacity-25 select-none">
+
+                                        <div className="hidden sm:block font-display text-[100px] leading-none font-bold text-gold select-none">1962</div>
+
+                                        <div className="sm:hidden relative border-4 border-gold/70 bg-ivory p-2 shadow-2xl">
+                                            <div className="relative w-full aspect-3/2">
+                                                <Image
+                                                    src="/image/shop.jpeg"
+                                                    alt="Original Kyal sweet shop"
+                                                    fill
+                                                    className="object-cover hover:scale-105 transition-all duration-300"
+                                                    sizes="(max-width: 768px) 50vw, 33vw"
+                                                    style={{ filter: "sepia(0.3) contrast(1.05)" }}
+                                                />
+                                            </div>
+
+                                            <div className="text-center text-xs text-foreground/70 italic py-2 font-display">
+                                                Fatehpur · Est. legacy
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
                                     <div className="mt-8 space-y-6">
                                         {[
                                             { year: "1962", text: "Founded in Fatehpur" },
