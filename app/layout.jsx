@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Kyal Misthan Bhandar — Premium Rajasthani Sweets, Fatehpur",
   description: "Order authentic Rajasthani mithai — Kaju Katli, Saffron Ghewar, Motichoor Laddoo and luxury gift hampers. Pure desi ghee, freshly made daily in Fatehpur.",
+   keywords: ["sweets in Fatehpur", "mithai shop", "gift hampers", "best sweets shop", "mithai dukaan"],
 };
 
 export default async function RootLayout({ children }) {
