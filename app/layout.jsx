@@ -19,7 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Kyal Misthan Bhandar — Premium Rajasthani Sweets, Fatehpur",
   description: "Order authentic Rajasthani mithai — Kaju Katli, Saffron Ghewar, Motichoor Laddoo and luxury gift hampers. Pure desi ghee, freshly made daily in Fatehpur.",
-   keywords: ["sweets in Fatehpur", "mithai shop", "gift hampers", "best sweets shop", "mithai dukaan"],
+  keywords: ["sweets in Fatehpur", "mithai shop", "gift hampers", "best sweets shop", "mithai dukaan"],
+
+  icons: {
+    icon: "/image/logo2.png",
+  },
 };
 
 export default async function RootLayout({ children }) {
@@ -31,11 +35,11 @@ export default async function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        
-          <main className="flex-1">
-            {children}
-          </main>
-         
+
+        <main className="flex-1">
+          {children}
+        </main>
+
       </body>
     </html>
   );
