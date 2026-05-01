@@ -48,6 +48,12 @@ export function Location() {
               >
                 {PHONE_DISPLAY}
               </a>
+              <a
+                href={`tel:+917742841548`}
+                className="text-crimson font-semibold hover:underline"
+              >
+                {'+91 77428 41548'}
+              </a>
             </InfoCard>
 
             <InfoCard icon={Clock} title="Open Daily">
