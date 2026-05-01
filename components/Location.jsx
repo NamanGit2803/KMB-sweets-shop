@@ -83,7 +83,7 @@ function InfoCard({ icon: Icon, title, children }) {
           {title}
         </div>
 
-        <div className="mt-1 text-sm text-muted-foreground leading-relaxed">
+        <div className="mt-1 text-sm text-muted-foreground leading-relaxed flex flex-col gap-1">
           {children}
         </div>
       </div>

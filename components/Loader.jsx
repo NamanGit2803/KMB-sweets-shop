@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Loader({ children }) {
     const [loading, setLoading] = useState(true);
 
+    const videoRef = useRef(null);
+
     useEffect(() => {
+
+        if (videoRef.current) {
+            videoRef.current.play().catch(() => { });
+        }
+
+
         const timer = setTimeout(() => {
             setLoading(false);
         }, 3000); // duration of your animation
@@ -16,7 +24,7 @@ export default function Loader({ children }) {
     if (loading) {
         return (
             <div className="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-500">
-                <video
+                <video ref={videoRef}
                     autoPlay
                     muted
                     playsInline
