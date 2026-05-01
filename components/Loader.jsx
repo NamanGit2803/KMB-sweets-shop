@@ -3,43 +3,52 @@
 import { useEffect, useState, useRef } from "react";
 
 export default function Loader({ children }) {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [hide, setHide] = useState(false);
 
-    const videoRef = useRef(null);
+  const videoRef = useRef(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    const video = videoRef.current;
 
-        if (videoRef.current) {
-            videoRef.current.play().catch(() => { });
-        }
-
-
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 3000); // duration of your animation
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (loading) {
-        return (
-            <div className="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-500">
-                <video ref={videoRef}
-                    autoPlay
-                    muted
-                    playsInline
-                    webkit-playsinline="true"
-                    preload="auto"
-                    disablePictureInPicture
-                    controls={false}
-                    className="w-64 md:w-80"
-                    onEnded={() => setLoading(false)}
-                >
-                    <source src="/logo-intro.mp4" type="video/mp4" />
-                </video>
-            </div>
-        );
+    if (video) {
+      video.play().catch(() => {});
     }
+  }, []);
 
-    return children;
+  const handleEnd = () => {
+    // Start smooth exit animation
+    setHide(true);
+
+    // Wait for animation to finish, then remove loader
+    setTimeout(() => {
+      setLoading(false);
+    }, 600);
+  };
+
+  if (loading) {
+    return (
+      <div
+        className={`fixed inset-0 flex items-center justify-center bg-white z-50 
+        transition-all duration-700 
+        ${hide ? "opacity-0 scale-110 blur-sm" : "opacity-100 scale-100 blur-0"}`}
+      >
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          autoPlay
+          preload="auto"
+          disablePictureInPicture
+          controls={false}
+          className="w-64 md:w-80"
+          onEnded={handleEnd}
+        >
+          <source src="/logo-intro.mp4" type="video/mp4" />
+        </video>
+      </div>
+    );
+  }
+
+  return children;
 }
