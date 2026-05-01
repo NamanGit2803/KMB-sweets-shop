@@ -35,11 +35,14 @@ export default async function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-
-        <main className="flex-1">
-          {children}
-        </main>
-
+        <Loader>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <FloatingWhatsapp />
+        </Loader>
       </body>
     </html>
   );
@@ -47,13 +50,4 @@ export default async function RootLayout({ children }) {
 
 
 
-//  <body className="min-h-full flex flex-col">
-//         <Loader>
-//           <Header />
-//           <main className="flex-1">
-//             {children}
-//           </main>
-//           <Footer />
-//           <FloatingWhatsapp />
-//         </Loader>
-//       </body>
+

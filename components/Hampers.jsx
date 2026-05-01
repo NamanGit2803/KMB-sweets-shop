@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { whatsappLink } from "@/lib/whatsapp";
 import { FaGift } from "react-icons/fa6";
+import Link from "next/link";
 
 const hampers = [
   {
@@ -87,10 +88,10 @@ export function Hampers() {
 
         {/* Bottom CTA */}
         <div className="mt-12 flex justify-center">
-          <div className="inline-flex items-center gap-3 rounded bg-[#B91C2C] px-6 py-3 text-sm font-semibold text-[#F5C842] shadow-lg">
+          <Link href={whatsappLink("Gift Hampers")} className="inline-flex items-center gap-3 rounded bg-[#B91C2C] px-6 py-3 text-sm font-semibold text-[#F5C842] shadow-lg">
             <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
             Bulk orders available — Contact Now
-          </div>
+          </Link>
         </div>
 
       </div>

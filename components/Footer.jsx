@@ -35,7 +35,7 @@ export function Footer() {
 
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/#sweets" className="hover:text-gold">
+                <Link href="/sweets" className="hover:text-gold">
                   Our Sweets
                 </Link>
               </li>
