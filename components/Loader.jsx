@@ -11,19 +11,23 @@ export default function Loader({ children }) {
     useEffect(() => {
         const video = videoRef.current;
 
-        if (video) {
-            video.muted = true;
-            video.playsInline = true;
+        if (!video) return;
 
-            const playPromise = video.play();
+        video.muted = true;
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
 
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    // retry once (important for iOS)
-                    setTimeout(() => video.play().catch(() => { }), 100);
-                });
-            }
-        }
+        const tryPlay = () => {
+            video.play().catch(() => { });
+        };
+
+        // Try immediately
+        tryPlay();
+
+        // Try again after slight delay (important for iOS)
+        const t = setTimeout(tryPlay, 200);
+
+        return () => clearTimeout(t);
     }, []);
 
     const handleEnd = () => {
